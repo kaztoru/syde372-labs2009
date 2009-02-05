@@ -33,183 +33,122 @@ YC = clustergen(100,muC,sigmaC);
 YD = clustergen(200,muD,sigmaD);
 YE = clustergen(150,muE,sigmaE);
 
-%muAB=[muA;muB];
-%muCDE=[muC;muD;muE];
-%YAB = [YA YB];
-
-% %calculates the midpoint
-% mpAB=muA+(muB-muA)/2;
-% %calculates the slope of the bisector
-% biAB = (-1)/((muA(2)-muB(2))/(muA(1)-muB(1)));
-% %calculates the y-intercept
-% bAB=mpAB(2)-(mpAB(1)*biAB);
-% %calculates the x-intercept
-% xintAB=(-bAB)/biAB;
-% %vectorize the x- and y-intercepts
-% xintABv=[xintAB 0];
-% bABv=[0 bAB];
-% 
-% %right bisector for CD
-% mpCD=muC+(muC+muD)/2;
-% biCD=(-1)/((muC(2)-muD(2))/(muC(1)-muD(1)));
-% bCD=mpCD(2)-(mpCD(1)*biCD);
-% xintCD=(-bCD)/biCD;
-% xintCDv=[xintCD 0];
-% bCDv=[0 bCD];
-% 
-% %right bisector for DE
-% mpDE=muD-(muD+muE)/2;
-% biDE=(-1)/((muD(2)-muE(2))/(muD(1)-muE(1)));
-% bDE=mpDE(2)-(mpDE(1)*biDE);
-% xintDE=(-bDE)/biDE;
-% xintDEv=[xintDE 0];
-% bDEv=[0 bDE];
-
-%plot clusters A and B and their unit std dev contours
-figure
-title('Part 2: A and B Clusters')
-plotsample(YA,cA);
-hold on
-plotsample(YB,cB);
-hold on
-contourplot(muA,sigmaA);
-hold on
-contourplot(muB,sigmaB);
-xlabel('x_{1}');
-ylabel('x_{2}');
-axis equal
-
-%plot clusters C, D, and E on a new figure
-figure
-title('Part 2: C, D, and E Clusters');
-plotsample(YC,cA);
-hold on
-plotsample(YD,cB); 
-hold on
-plotsample(YE,cE);
-hold on
-contourplot(muC,sigmaC);
-hold on
-contourplot(muD,sigmaD);
-hold on
-contourplot(muE,sigmaE);
-hold on
-line(xintCDv,bCDv);
-hold on
-%line(xintDEv,bDEv);
-xlabel('x_{1}');
-ylabel('x_{2}');
-axis equal
 %%
-%Part 3: classifiers
+%Part 4: testing
 
-%input data needed to run this function
-Mu1=[5,10];
-Mu2=[10,15];
-Sigma1=[8 0;0 4];
-Sigma2=[8 0;0 4];
-
-R1 = chol(Sigma1);
-z1 = repmat(Mu1,200,1) + randn(200,2)*R1;
-R2 = chol(Sigma2);
-z2 = repmat(Mu2,200,1) + randn(200,2)*R2;
-
-% generate 2-D Grid
-Grid_x=(0:0.3:25);
-Grid_y=(0:0.3:25);
-
-
-%classify using MED
-MED=zeros(length(Grid_x),length(Grid_y));
-figure
-title('Part 3: Case 1 - MED Boundary');
-for i=1 : length(Grid_x)
-    for j=1: length(Grid_y)
-        location=[Grid_x(i),Grid_y(j)];%row vector
-        if( (location-Mu1)*(location-Mu1)'<(location-Mu2)*(location-Mu2)')
-            plot(Grid_x(i),Grid_y(j),'w.');
-            hold on;
+% generate testing data
+TA=clustergen(200,muA,sigmaA);
+TB=clustergen(200,muB,sigmaB);
+confu_matrix=zeros(2,2);
+%%
+%testing both class using MED
+for i=1 : length(TA)
+        location=[TA(i,1),TA(i,2)];%row vector
+        if( (location-muA)*(location-muA)'<(location-muB)*(location-muB)')
+            confu_matrix(1,1)=confu_matrix(1,1)+1;
         else
-            plot(Grid_x(i),Grid_y(j),'y.');
-            hold on;
+            confu_matrix(1,2)=confu_matrix(1,2)+1;
         end
-    end
+end
+for i=1 : length(TB)
+        location=[TB(i,1),TB(i,2)];%row vector
+        if( (location-muA)*(location-muA)'<(location-muB)*(location-muB)')
+            confu_matrix(2,1)=confu_matrix(2,1)+1;
+        else
+            confu_matrix(2,2)=confu_matrix(2,2)+1;
+        end
+end
+%calculate error
+confu_matrix
+err_MED=(confu_matrix(1,2)+confu_matrix(2,1))/([1,1]*confu_matrix*[1 1]')
+confu_matrix=zeros(2,2);
+
+%%
+%testing using GED
+for i=1 : length(TA)
+        location=[TA(i,1),TA(i,2)];%row vector
+        if( (location-muA)*sigmaA^(-1)*(location-muA)'<(location-muB)*sigmaB^(-1)*(location-muB)')
+            confu_matrix(1,1)=confu_matrix(1,1)+1;
+        else
+            confu_matrix(1,2)=confu_matrix(1,2)+1;
+        end
 end
 
-%classify using GED
-GED=zeros(length(Grid_x),length(Grid_y));
-figure
-title('Part 3: Case 1 - GED Boundary');
-for i=1 : length(Grid_x)
-    for j=1: length(Grid_y)
-        location=[Grid_x(i),Grid_y(j)];%row vector
-        if( (location-Mu1)*Sigma1^(-1)*(location-Mu1)'<(location-Mu2)*Sigma2^(-1)*(location-Mu2)')
-            plot(Grid_x(i),Grid_y(j),'w.');
-            hold on;
+for i=1 : length(TB)
+        location=[TB(i,1),TB(i,2)];%row vector
+        if( (location-muA)*sigmaA^(-1)*(location-muA)'<(location-muB)*sigmaB^(-1)*(location-muB)')
+            confu_matrix(2,1)=confu_matrix(2,1)+1;
         else
-            plot(Grid_x(i),Grid_y(j),'y.');
-            hold on;
+            confu_matrix(2,2)=confu_matrix(2,2)+1;
         end
-    end
+end
+%calculate error
+confu_matrix
+err_GED=(confu_matrix(1,2)+confu_matrix(2,1))/([1,1]*confu_matrix*[1 1]')
+confu_matrix=zeros(2,2);
+
+%%      
+%testing using KNN
+KNNA=zeros(length(YA),1);
+KNNB=zeros(length(YB),1);
+location=[0 0];
+copy=ones(length(YA),2);
+squareA=ones(length(YA),length(YA));
+squareB=ones(length(YB),length(YB));
+distanceA=ones(length(YA),1);
+distanceB=ones(length(YB),1);
+sorted_disA=ones(length(YA),1);
+sorted_disB=ones(length(YB),1);
+
+% for Data generated in Class A
+for i=1 : length(TA)
+        location=[TA(i,1),TA(i,2)];   % a row vector indicating the location of the point that needs to be classified\
+        copy=ones(length(YA),1)*location;        % a N*2 Vector that contains copies of "locations", so that it is easier to compute       
+        squareA=(copy-YA)*(copy-YA)' ;   % N*N vector whose diagonals represent the distances between a location to the sample data
+        for k=1: length(YA)
+            distanceA(k,1)=squareA(k,k);% distance is a N*1 vector containing distance from one data to all sample data
+        end
+        sorted_disA=sort(distanceA);
+        KNNA=sorted_disA(5,1); % pick the 5th nearest point
+        %repeat for class 2
+        squareB=(copy-YB)*(copy-YB)' ;   
+        for k=1: length(YB)
+            distanceB(k,1)=squareB(k,k);
+        end
+        sorted_disB=sort(distanceB);
+        KNNB=sorted_disB(5,1);
+        %compare and make decision
+        if( KNNA<KNNB)
+            confu_matrix(1,1)=confu_matrix(1,1)+1;
+        else
+            confu_matrix(1,2)=confu_matrix(1,2)+1;
+        end
 end
 
-%classify using NN
-NN=zeros(length(Grid_x),length(Grid_y));
-figure
-title('Part 3: Case 1 - NN Boundary');
-for i=1 : length(Grid_x)
-    for j=1: length(Grid_y)
-        location=[Grid_x(i),Grid_y(j)]; %row vector
-        min1=(location-[z1(1,1) z1(1,2)])*(location-[z1(1,1),z1(1,2)])' ; % initializae min1
-        for k=2: ndims(z1)
-            if ((location-[z1(k,1),z1(k,2)])*(location-[z1(k,1),z1(k,2)])'<min1)
-                min1=(location-[z1(k,1),z1(k,2)])*(location-[z1(k,1),z1(k,2)])';
-            end
+% for Data generated in Class B
+for i=1 : length(TB)
+        location=[TB(i,1),TB(i,2)];   % a row vector indicating the location of the point that needs to be classified\
+        copy=ones(length(YA),1)*location;        % a N*2 Vector that contains copies of "locations", so that it is easier to compute       
+        squareA=(copy-YA)*(copy-YA)' ;   % N*N vector whose diagonals represent the distances between a location to the sample data
+        for k=1: length(YA)
+            distanceA(k,1)=squareA(k,k);% distance is a N*1 vector containing distance from one data to all sample data
         end
-        
-        min2=(location-[z2(1,1),z2(1,2)])*(location-[z2(1,1),z2(1,2)])' ; % initializae min1
-        for k=2: ndims(z2)
-            if ((location-[z2(k,1),z2(k,2)])*(location-[z2(k,1),z2(k,2)])'<min2)
-                min2=(location-[z2(k,1),z2(k,2)])*(location-[z2(k,1),z2(k,2)])';
-            end
+        sorted_disA=sort(distanceA);
+        KNNA=sorted_disA(5,1); % pick the 5th nearest point
+        %repeat for class 2
+        squareB=(copy-YB)*(copy-YB)' ;   
+        for k=1: length(YB)
+            distanceB(k,1)=squareB(k,k);
         end
-        % compare the distance, classify based on Minimum Euclean Distance
-        if( min1<min2)
-            plot(Grid_x(i),Grid_y(j),'w.');
-            hold on;
+        sorted_disB=sort(distanceB);
+        KNNB=sorted_disB(5,1);
+        %compare and make decision
+        if( KNNA<KNNB)
+            confu_matrix(2,1)=confu_matrix(2,1)+1;
         else
-            plot(Grid_x(i),Grid_y(j),'y.');
-            hold on;
+            confu_matrix(2,2)=confu_matrix(2,2)+1;
         end
-    end
 end
-% 
-% %classify using 5-NN
-% KNN=zeros(length(Grid_x),length(Grid_y));
-% for i=1 : length(Grid_x)
-%     for j=1: length(Grid_y)
-%         location=[Grid_x(i),Grid_y(j)]; %row vector
-%         min1=(location-[z1(1,1) z1(1,2)])*(location-[z1(1,1),z1(1,2)])' ; % initializae min1
-%         for k=2: ndims(z1)
-%             if ((location-[z1(k,1),z1(k,2)])*(location-[z1(k,1),z1(k,2)])'<min1)
-%                 min1=(location-[z1(k,1),z1(k,2)])*(location-[z1(k,1),z1(k,2)])';
-%             end
-%         end
-%         
-%         min2=(location-[z2(1,1),z2(1,2)])*(location-[z2(1,1),z2(1,2)])' ; % initializae min1
-%         for k=2: ndims(z2)
-%             if ((location-[z2(k,1),z2(k,2)])*(location-[z2(k,1),z2(k,2)])'<min2)
-%                 min2=(location-[z2(k,1),z2(k,2)])*(location-[z2(k,1),z2(k,2)])';
-%             end
-%         end
-%         % compare the distance, classify based on Minimum Euclean Distance
-%         if( min1<min2)
-%             KNN(i,j)=1;
-%         else
-%             KNN(i,j)=0.5;
-%         end
-%     end
-% end
-% figure
-% surf(Grid_x,Grid_y,KNN)
-
+%calculate error
+confu_matrix
+err_KNN=(confu_matrix(1,2)+confu_matrix(2,1))/([1,1]*confu_matrix*[1 1]')
