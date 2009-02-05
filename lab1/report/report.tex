@@ -1,5 +1,6 @@
-\documentclass[12pt]{sydeStyle}
+\documentclass{sydeStyle}
 \usepackage{booktabs}
+\usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{tabularx}
 
@@ -27,10 +28,14 @@
 \input{intro}
 
 \chapter{Implementation}
+\input{implementation}
+\includegraphics{test}
 
 \chapter{Results}
+\include{results}
 
 \chapter{Conclusions}
+\include{conclusions}
 
 \appendix
 \renewcommand{\thechapter}{\Alph{chapter}}
