@@ -1,5 +1,5 @@
 %% File Info
-%SYDE 372 Lab 0 - Matlab Introduction
+%SYDE 372 Lab 1 - Clusters and Classification Boundaries
 %Feb 5, 2009
 
 clear
