@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Sun Feb 08 15:53:05 EST 2009
+builderNum=0
+outputDir=lab1/report/
+makeIndSty=
+bibrefDir=
+outputFormat=dvi
+tempDir=lab1/report
+mainTexFile=report.tex
+outputFile=report.dvi
+langSpell=
+markDer=true
+srcDir=lab1/report/
