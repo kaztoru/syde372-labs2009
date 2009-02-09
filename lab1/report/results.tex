@@ -9,11 +9,28 @@ a given mean and covariance; we would not expect all data points to be within
 one standard deviation of the mean.
 
 \section{Classification Boundaries}
-
 %2.	Comment on the classification boundaries. How do the different boundaries
 %compare?
 
 \subsection{Parametric}
+
+\begin{figure}
+  \begin{center}
+  	\label{fig:2param}  
+    \caption{The clusters, unit standard deviation curves and
+    parametric classification boundaries for the 2 class case.}
+    \includegraphics[width=15cm]{figures/2-param}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+  	\label{fig:3param}
+    \caption{The clusters, unit standard deviation curves and
+    parametric classification boundaries for the 3 class case.}
+    \includegraphics[width=15cm]{figures/3-param}
+  \end{center}
+\end{figure}
 
 One result that was apparent in the 2-class case was that the GED classifier 
 was better than MED.  The reason behind this observation is the fact that MED
@@ -30,6 +47,24 @@ closer to Class E.
 
 \subsection{Non-parametric}
 
+\begin{figure}
+  \begin{center}
+  	\label{fig:2nonparam}  
+    \caption{The clusters and non-parametric classification
+    boundaries for the 2 class case.}
+    \includegraphics[width=15cm]{figures/2-nonparam}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+  	\label{fig:3nonparam}
+    \caption{The clusters and non-parametric classification
+    boundaries for the 3 class case.}
+    \includegraphics[width=15cm]{figures/3-nonparam}
+  \end{center}
+\end{figure}
+
 Of the non-parametric classifiers, the 5NN classifier displayed a much simpler 
 boundary than the NN classifier.  The key distinction is the fact that the 5NN,
 by ignoring the four nearest points, is making itself much less sensitive to 
@@ -43,13 +78,37 @@ to all the training data.
 %3.	Compare the results. Which error is smallest? What do you observe in the
 %confusion matrices for CASE2?
 
+\begin{table}[h]
+\centering
+\caption{Confusion matrix and probability of error for the 2 class case}
+\label{tab:conf2class}
+\vspace{6pt}
+\begin{tabular}{lcc}
+\toprule
+Classification Method & $M_{confusion}$ & $P(\varepsilon)$ \\
+\midrule
+MED &
+\begin{bmatrix}
+188 & 15 \\
+12  & 185 \\
+\end{bmatrix}
+& 62.86 \\
+GED & 28.93	& 28.21	\\
+MAP & 46.43	& 8.57	\\		
+\midrule
+\midrule
+Total domestic energy (\%) & 4.51	& 4.62	& 4.76	& 4.63 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 In the first case, the covariance matrices of both classes were identical,
 driving the MAP classifier to be identical to the GED classifier.  This result
 is supported by a simple consideration of the additional terms in MAP that 
-differentiate it from GED.  The classes are equally likely, so ln(\Theta) goes
-to zero.  Also, the classes have the same covariance matrix, resulting in the
-ln(\Sigma) terms cancelling out to zero.  This leaves the exact GED formula, 
-thus confirming the observed result.  In the three class case, the three
+differentiate it from GED.  The classes are equally likely, so $\ln(\Theta)$
+goes to zero.  Also, the classes have the same covariance matrix, resulting in the
+$\ln(\Sigma)$ terms cancelling out to zero.  This leaves the exact GED
+formula, thus confirming the observed result.  In the three class case, the three
 classes are not equally likely and therefore MAP provides a better classifier. 
 MAP prefers classes that are more compact and have a higher probability density
 in a given region. From these observations, it can be gathered that, if the two
@@ -71,9 +130,9 @@ and non-parametric classifiers are case-based even when the assumption for the
 shape of the class holds.
 
 To explore the effect of the choice of k on the probability of error, a simple 
-for loop was created to calculate the probability of error for the full range 
-of k (ie 0<k<Nsmallestclass <-- **XX - subscript).  This generally showed a 
-sharp decrease initially, as outliers are ignored.  After the initial drop, 
+for loop was created to calculate the probability of error for the range 
+of possible k ($0 < k < n_{smallest\_class}$).  This generally
+showed a sharp decrease initially, as outliers are ignored.  After the initial drop, 
 the graphs behave slightly differently for the 2- and 3-class cases.  For the 
 2-class case, we found that the probability of error remains fairly flat for
 the majority of the values of k, with a spike as k approaches its maximum
