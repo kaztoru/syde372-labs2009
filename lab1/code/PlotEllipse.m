@@ -1,4 +1,4 @@
-function plot_ellipse(x,y,theta,a,b)
+function PlotEllipse(x,y,theta,a,b)
 
 if nargin<5, error('Too few arguments to Plot_Ellipse.'); end;
 
