@@ -16,7 +16,7 @@ classdef NonParametricClass
         function PlotCluster(NPC, colour)
            Y_1=NPC.Cluster*[1;0];
            Y_2=NPC.Cluster*[0;1];
-           scatter(Y_1, Y_2, 5, colour) 
+           scatter(Y_1, Y_2, 5, strcat('*', colour)) 
         end
         
         %% Distance

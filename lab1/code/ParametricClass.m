@@ -20,7 +20,7 @@ classdef ParametricClass
             t = NonParametricClass(PC.Mu, PC.Sigma, n_pts);
         end
         
-        function PlotStdDev(PC)
+        function PlotStdDev(PC, colour)
             x=PC.Mu(1);
             y=PC.Mu(2);
 
@@ -31,7 +31,7 @@ classdef ParametricClass
 
             theta = atan(V(2,1)/V(1,1));
             
-            PlotEllipse(x,y,theta,rta,rtc)
+            PlotEllipse(x,y,theta,rta,rtc, colour)
         end
         
         %% Distance Calculations
