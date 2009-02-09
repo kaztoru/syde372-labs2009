@@ -31,7 +31,7 @@ classdef ParametricClass
 
             theta = atan(V(2,1)/V(1,1));
             
-            plot_ellipse(x,y,theta,rta,rtc)
+            PlotEllipse(x,y,theta,rta,rtc)
         end
         
         %% Distance Calculations
