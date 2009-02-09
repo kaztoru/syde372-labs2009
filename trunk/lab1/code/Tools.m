@@ -6,13 +6,13 @@ classdef Tools
     end
     
     methods (Static = true)
-        function ParametricPlot(classes, colours, n_pts, x_range, y_range, contours)
-    
+        function ParametricPlot(classes, colours, n_pts, x_range, y_range, contours, names)
+            
             % Plot the clusters and the unit standard deviations
             for i=1:length(classes)
                 classes{i}.TestData(classes{i}.Probability * n_pts).PlotCluster(colours{i})
                 hold on;
-                classes{i}.PlotStdDev()
+                classes{i}.PlotStdDev(colours{i})
                 hold on;
             end
 
@@ -22,16 +22,18 @@ classdef Tools
             p = ParametricClass.BoundMatrixMAP(classes, x_range, y_range);
 
             bounds = {m g p};
-            bound_colours = {'red' 'blue' 'green'};
+            bound_styles = {'cyan' 'magenta' ':black'};
 
             for i=1:length(bounds)
-                contour(x_range, y_range, bounds{i}', contours, bound_colours{i})
+                contour(x_range, y_range, bounds{i}', contours, bound_styles{i}, 'LineWidth', 1)
                 hold on;
             end
+            
+            legend(names)
 
         end
         
-        function NonParametricPlot(classes, colours, n_pts, x_range, y_range, contours)
+        function NonParametricPlot(classes, colours, n_pts, x_range, y_range, contours, names)
             % Create the NP Classes and plot the clusters
             np_classes = {};
             for i=1:length(classes)
@@ -46,12 +48,14 @@ classdef Tools
             k = NonParametricClass.BoundMatrixKNN(np_classes, 5, x_range, y_range);
 
             bounds = {n k};
-            bound_colours = {'black' 'magenta'};
+            bound_styles = {'black' 'magenta'};
 
             for i=1:length(bounds)
-                contour(x_range, y_range, bounds{i}', contours, bound_colours{i})
+                contour(x_range, y_range, bounds{i}', contours, bound_styles{i}, 'LineWidth', 1)
                 hold on;
             end
+            
+            legend(names)
         end
         
         function Testing(classes, n_pts)
