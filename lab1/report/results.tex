@@ -85,136 +85,89 @@ to all the training data.
 \vspace{6pt}
 \begin{tabular}{lcc}
 \toprule
-Classification Method & $M_{confusion}$ & $P(\varepsilon)$ \\
+ & $M_{confusion}$ & $P(\varepsilon)$ \\
 \midrule
 MED &
 \begin{bmatrix}
-188 & 15 \\
-12  & 185 \\
+   188 &   15 \\
+    12 &  185 \\
 \end{bmatrix}
-& 62.86 \\
-GED & 28.93	& 28.21	\\
-MAP & 46.43	& 8.57	\\		
-\midrule
-\midrule
-Total domestic energy (\%) & 4.51	& 4.62	& 4.76	& 4.63 \\
+& 0.0675 \\\addlinespace
+GED &
+\begin{bmatrix}
+   190 &   17\\
+    10 &  183\\
+\end{bmatrix}
+& 0.0675 \\\addlinespace
+MAP &
+\begin{bmatrix}
+   190 &   17\\
+    10 &  183\\
+\end{bmatrix}
+& 0.0675	\\	\addlinespace
+NN &
+\begin{bmatrix}
+   175 &   22\\
+    25 &  178\\
+\end{bmatrix}
+& 0.1175	\\	\addlinespace
+5NN &
+\begin{bmatrix}
+   187 &   16\\
+    13 &  184\\
+\end{bmatrix}
+& 0.0725	\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-conf_MED =
-
-   188    15
-    12   185
-
-
-prob_MED =
-
-    0.0675
-
-
-conf_GED =
-
-   190    17
-    10   183
-
-
-prob_GED =
-
-    0.0675
-
-
-conf_MAP =
-
-   190    17
-    10   183
-
-
-prob_MAP =
-
-    0.0675
-
-
-conf_NN =
-
-   175    22
-    25   178
-
-
-prob_NN =
-
-    0.1175
-
-
-conf_kNN =
-
-   187    16
-    13   184
-
-
-prob_kNN =
-
-    0.0725
-
-
-conf_MED =
-
-    78     1    29
-     4   183    16
-    18    16   105
-
-
-prob_MED =
-
-    0.1867
-
-
-conf_GED =
-
-    94     3    36
-     2   174    11
-     4    23   103
-
-
-prob_GED =
-
-    0.1756
-
-
-conf_MAP =
-
-    86     0    25
-     2   187    28
-    12    13    97
-
-
-prob_MAP =
-
-    0.1778
-
-
-conf_NN =
-
-    73     2    36
-     4   188    26
-    23    10    88
-
-
-prob_NN =
-
-    0.2244
-
-
-conf_kNN =
-
-    76     0    22
-     4   187    25
-    20    13   103
-
-
-prob_kNN =
-
-    0.1867
+\begin{table}[h]
+\centering
+\caption{Confusion matrix and probability of error for the 3 class case}
+\label{tab:conf2class}
+\vspace{6pt}
+\begin{tabular}{lcc}
+\toprule
+ & $M_{confusion}$ & $P(\varepsilon)$ \\
+\midrule
+MED &
+\begin{bmatrix}
+    78 &    1 &   29\\
+     4 &  183 &   16\\
+    18 &   16 &  105\\
+\end{bmatrix}
+& 0.1867 \\\addlinespace
+GED &
+\begin{bmatrix}
+    94 &    3 &   36\\
+     2 &  174 &   11\\
+     4 &   23 &  103\\
+\end{bmatrix}
+& 0.1756	\\\addlinespace
+MAP &
+\begin{bmatrix}
+    86 &    0 &   25\\
+     2 &  187 &   28\\
+    12 &   13 &   97\\
+\end{bmatrix}
+& 0.1778	\\	\addlinespace
+NN &
+\begin{bmatrix}
+    73 &    2 &   36\\
+     4 &  188 &   26\\
+    23 &   10 &   88\\
+\end{bmatrix}
+& 0.2244	\\	\addlinespace
+5NN &
+\begin{bmatrix}
+    76 &    0 &   22\\
+     4 &  187 &   25\\
+    20 &   13 &  103\\
+\end{bmatrix}
+& 0.1867	\\\addlinespace
+\bottomrule
+\end{tabular}
+\end{table}
 
 In the first case, the covariance matrices of both classes were identical,
 driving the MAP classifier to be identical to the GED classifier.  This result
