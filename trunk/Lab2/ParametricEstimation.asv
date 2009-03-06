@@ -1,0 +1,91 @@
+classdef ParametricEstimation
+    
+    properties
+        Mu
+        Sigma
+        Lamda
+        a
+        b
+    end
+    
+    methods
+        
+        function PE = ParametricEstimation(sample,para)
+            if(cols(para)==2)
+                PE.TrueMu=para*[1,0]';
+                PE.TrueSigma=para*[0,1]';
+            else
+                PE.TrueLamda=para;
+            end
+            R=size(sample);
+            N=R*[0;1];
+            PE.Mu = (sample*ones(N,1))/N;
+            PE.Sigma = sqrt((sample-(PE.Mu*ones(1,N)))*(sample-(PE.Mu*ones(1,N)))'/N);
+            PE.Lamda = N/(sample*ones(N,1));
+            PE.a = min(sample);
+            PE.b = max(sample);
+        end
+        
+        function Gaussian = plotGauss(PE)
+            figure;
+            for x=PE.Mu-5*PE.Sigma:0.01:PE.Mu+5*PE.Sigma
+                p=exp(-(x-PE.Mu)^2/(2*(PE.Sigma)^2)/sqrt(2*pi*PE.Sigma));
+                plot(x,p)
+                hold on
+            end
+        end
+        
+        function Exponential = plotExp(PE)
+            figure; 
+            for x=PE.Mu-5*PE.Sigma:0.01:PE.Mu+5*PE.Sigma
+                p=PE.Lamda*exp(-PE.Lamda*x);
+                plot(x,p,'red')
+                hold on
+             end
+        end
+        
+        function Uniform = plotUni(PE)
+            figure; 
+            for x=PE.Mu-5*PE.Sigma:0.01:PE.Mu+5*PE.Sigma
+                p=1/(PE.b-PE.a);
+                plot(x,p,'green')
+                hold on
+             end
+        end
+        
+        function T = plotTrue(PE)
+            if   
+                for x=mu-5*sigma:0.01:mu+5*sigma
+                    p=exp(-(x-mu)^2/(2*sigma)^2)/sqrt(2*pi*sigma);
+                    plot(x,p,'red')
+                    hold on
+                end
+            else
+                for x=0:0.01:5*lamda
+                    p=lamda*exp(-lamda*x);
+                    plot(x,p)
+                    hold on
+                end
+            end   
+        end
+    end
+end
+
+
+%     methods
+%         
+%         function PE = ParametricEstimation(mu, sigma, lamda, a, b)
+%             PE.Mu = mu
+%             PE.Sigma = sigma
+%             PE.Lamda = lamda
+%             PE.a = a
+%             PE.b = b
+%         end
+%         
+%         function Gauss = Gaussian(sample)
+%             PE.Mu = (1/cols(sample))*(sample*ones(cols(sample),1))
+%             PE.Sigma = (1/cols(sample))*(sample-(PE.Mu*ones(1,cols(sample))))*(sample-(PE.Mu*ones(1,cols(sample))))'
+%         end
+%         
+%     end
+% end
