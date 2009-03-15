@@ -19,7 +19,7 @@ classdef TwoD
             temp=ones(size,2);
             temp=temp*[PE.mean_estm(1,1),0 ; 0,PE.mean_estm(1,2)];
             
-            PE.cov_estm = (PE.data-temp)'*(PE.data-temp)/(size-1)
+            PE.cov_estm = (PE.data-temp)'*(PE.data-temp)/(size-1);
                 
                          
         end
