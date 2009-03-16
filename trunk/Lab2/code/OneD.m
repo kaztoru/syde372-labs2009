@@ -35,7 +35,7 @@ classdef OneD
         function plotGauss(PE)
             figure;
             for x=PE.Mu-5*PE.Sigma:0.01:PE.Mu+5*PE.Sigma
-                p=exp(-(x-PE.Mu)^2/(2*(PE.Sigma)^2)/sqrt(2*pi*PE.Sigma));
+                p=exp(-(x-PE.Mu)^2/(2*(PE.Sigma)^2))/sqrt(2*pi*PE.Sigma);
                 plot(x,p)
                 hold on
             end
