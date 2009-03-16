@@ -65,11 +65,18 @@ classdef SequentialEstimation < handle
 %             hold on
         end
         
-        function FindDiscriminants(SE)
-            while (size(SE.class_pts{1},1) > 0) && (size(SE.class_pts{2},1) > 0)
+        function FindDiscriminants(SE, limit)
+            SE.discriminants = {};
+            SE.class_pts = SE.classes;
+            if nargin <= 1
+               limit = Inf; 
+            end
+            i = 0;
+            while (size(SE.class_pts{1},1) > 0) && (size(SE.class_pts{2},1) > 0) && (i < limit)
                 [class_no, pts, remaining] = SE.GenerateDiscriminant();
                 SE.discriminants = [SE.discriminants {{class_no, pts}}];
                 SE.class_pts{class_no} = remaining;
+                i = i+1;
             end
         end
         
@@ -80,10 +87,28 @@ classdef SequentialEstimation < handle
                 if med_class == SE.discriminants{i}{1}
                     class = med_class;
                     break
-                elseif med_class == 1
+                elseif SE.discriminants{i}{1} == 1
                     class = 2;
                 else
                     class = 1;
+                end
+            end
+        end
+        
+        function conf = ConfusionMatrix(SE, limit)
+            if nargin <= 1
+               limit = Inf; 
+            end
+            
+            SE.FindDiscriminants(limit)
+            
+            test_data = {NonParametricClass(SE.classes{1}) NonParametricClass(SE.classes{2})};
+            conf = zeros(length(SE.classes));
+            %populate test classes and confusion matrix
+            for i=1:length(SE.classes)
+                for j=1:size(test_data{i}.Cluster,1)
+                    c = SE.Classify(test_data{i}.Cluster(j, :)');
+                    conf(c,i) = conf(c,i) + 1;
                 end
             end
         end
