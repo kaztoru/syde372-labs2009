@@ -1,11 +1,24 @@
 \subsection{Implementation}
+The sequential discriminant implementation is inplemented in the
+\texttt{SequentialEstimation} class (see Section \ref{sec:seq_est}). The
+class comprises of 3 main functions to generate the discriminants along with 4
+helper functions that classify points based on the discriminants, generate a
+confusion matrix for the classifier, and plot the discriminants and the class
+boundaries.
+
+Discriminant calculations in \texttt{SequentialEstimation} make use of the
+\texttt{ParametricClass} and \texttt{NonParametricClass} classes from Lab 1.
+Each linear discriminant is represented by a MED boundary between the two
+reference points. This is used to calculate the confusion matricies to identify
+acceptable classifiers as well as in plotting and classifying points after the
+overall sequential classifier is formed.
 
 \subsection{Results}
 %Images
 
 % 4.2
-When tested against the training data, the probability of error will be zero.
-As opposed to parametric classifiers where the boundaries are generated from
+When testing the classifier against the training data, the probability of error
+will be zero. As opposed to parametric classifiers where the boundaries are generated from
 the statistics of the sample, sequential discriminants form their boundaries by
 ensuring that they capture each data point from the training set inside the
 classifier. Thus, the training data will fall entirely into the correct
@@ -14,38 +27,42 @@ classifiers and the probability of error is zero.
 % 4.3
 \begin{table}
 \centering
-\caption{}
-\label{}
-\begin{tabular}
+\caption{Error rates (\%) in classifying the test data}
+\label{tab:error_rates}
+\begin{tabular}{lrrrr}
 \toprule
-$J$ & $p_{\textrm{err}_1}$ & $p_{\textrm{err}_2}$ & $p_{\textrm{err}_3}$ &
-$p_{\textrm{err}_{\textrm{avg}}}$
+$J$ & min & $\mu$ & max & $\sigma$\\
 \midrule
-1 & 29.75 & 27 & 27.25 & 28\\
-2 & 14 & 16.75 & 16.25 & 15.67\\
-3 & 15.25 & 8 & 3.5 & 8.92\\
-4 & 1.5 & 1.75 & 23.25 & 8.83\\
-5 & 35.75 & 0.75 & 1.75 & 12.75\\
-6 & 0.5 & 19 & 6.5 & 8.67\\
-7 & 4.5 & 10 & 12.75 & 9.08\\
-8 & 0.25 & 0 & 0.25 & 0.17\\
-9 & 0 & 0 & 0 & 0\\
-10 & 0 & 0 & 0 & 0\\
-11 & 0 & 0 & 0 & 0\\
-12 & 0 & 0 & 0 & 0\\
-13 & 0 & 0 & 0 & 0\\
-14 & 0 & 0 & 0 & 0\\
-15 & 0 & 0 & 0 & 0\\
-16 & 0 & 0 & 0 & 0\\
-17 & 0 & 0 & 0 & 0\\
-18 & 0 & 0 & 0 & 0\\
-19 & 0 & 0 & 0 & 0\\
-20 & 0 & 0 & 0 & 0\\
-\midrule
-$\mu$ & 5.075 & 4.1625 & 4.575 & 4.6042\\
-min & 0 & 0 & 0 & 0 \\
-max & 35.75 & 27 & 27.25 & 28\\
-$sigma$ & 10.5116 & 7.9195 & 8.4254 & 7.5506\\
+1 & 22.25 & 28.1375 & 35.25 & 3.3936\\
+2 & 5.5 & 11.6375 & 21 & 4.3728\\
+3 & 2.5 & 7.4625 & 18.25 & 4.5337\\
+4 & 0.25 & 6.725 & 38.75 & 10.1472\\
+5 & 0 & 10.1625 & 37 & 12.1421\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+This result changes if the number of discriminants allowed is limited. Figure
+\ref{fig:error_rates} shows how error rates generally decrease in inverse
+proportion to the number of classifiers. It also shows, however, that while the
+general trend is decreasing error, it is prone to random spikes due to the
+nature of the classifier selection.
+
+\begin{figure}
+\label{fig:error_rates}
+\includegraphics[scale=0.6]{sequence_error_plots}
+\caption{Plot of error rates for different numbers of discriminants.}
+\end{figure}
+
+Limiting the number of point pairs to test would also shift the results
+somewhat. The shift would depend on how the new classifiers were selected. One
+possible method would be to track how many points from each class fall on the
+correct side of a potential classifier and select the one with the highest
+number or proportion of correct points in a class after a specified number of
+iterations. This method would likely smooth class shapes somewhat as some
+outlier points may be neglected in a given sectioning.
+
+Another strategy may be to simply stop after a number of iterations if a
+suitable classifier has not been found. This could produce a rather random set
+of classifiers, potentially cutting off large sections of a class in the
+process.
