@@ -1,4 +1,5 @@
 \subsection{Implementation}
+\label{sec:sequ}
 The sequential discriminant implementation is inplemented in the
 \texttt{SequentialEstimation} class (see Section \ref{sec:seq_est}). The
 class comprises of 3 main functions to generate the discriminants along with 4
@@ -66,3 +67,10 @@ Another strategy may be to simply stop after a number of iterations if a
 suitable classifier has not been found. This could produce a rather random set
 of classifiers, potentially cutting off large sections of a class in the
 process.
+
+\begin{figure}
+\label{fig:sequential_bounds}
+\includegraphics[scale=0.5]{sequential_bounds}
+\caption{Plots the learning data, linear discriminants (cyan and green) and the
+class boundary (black) using sequential discriminants.}
+\end{figure}
