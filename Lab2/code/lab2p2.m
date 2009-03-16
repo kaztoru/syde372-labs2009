@@ -21,30 +21,27 @@ matrix=y'*y;
 res=[1,0,0,450,450];
 
 a=TwoD(al);
-% [ap,ax,ay]=a.parzen(res,matrix);
-% 
- b=TwoD(bl);
-% [bp,bx,by]=b.parzen(res,matrix);
-% 
+b=TwoD(bl);
 c=TwoD(cl);
-% [cp,cx,cy]=c.parzen(res,matrix);
-% 
-% %%nonparametric method(parzen)
-% 
-% %Apply ML for classification
-% 
-% ML=ML(ap,bp,cp);
-% 
-% 
-% %plot contour
-% figure;
-% contour(cx,cy,ML)
-% hold on
-% %plot clusters
-% a.plotCluster('bd');
-% b.plotCluster('g+');
-% c.plotCluster('r*');
 
+%%nonparametric method(parzen)
+
+[ap,ax,ay]=a.parzen(res,matrix);
+[bp,bx,by]=b.parzen(res,matrix);
+[cp,cx,cy]=c.parzen(res,matrix);
+
+%Apply ML for classification
+
+ML=ML(ap,bp,cp);
+
+%plot contour
+figure;
+contour(cx,cy,ML)
+hold on
+%plot clusters
+a.plotCluster('bd');
+b.plotCluster('g+');
+c.plotCluster('r*');
 
 %parametric method
 [ap,ax,ay]=a.parametric(res);
