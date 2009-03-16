@@ -1,0 +1,53 @@
+\documentclass{sydeStyle}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{color}
+
+\lstset{language=Matlab}
+
+\numberwithin{algorithm}{chapter}
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+\title{Lab 2: Model Estimation and Descriminant Functions}
+\coursecode{372}
+\author{
+    David Kadish, 20176757\\
+    Zhao Peng, 20326604\\
+    Matt Stewart, 20205320\\
+}
+\prof{Professor P. Fieguth}
+\date{March 16, 2009}
+
+\begin{document}
+
+\pagenumbering{roman}
+
+\maketitle
+
+\setcounter{page}{2} % the table of contents will be shown as page iii
+
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+\input{intro}
+
+\chapter{Implementation}
+\input{implementation}
+
+\chapter{Results and Conclusions}
+\label{cha:results}
+\input{results}
+
+\appendix
+\renewcommand{\thechapter}{\Alph{chapter}}
+
+\chapter{Code}
+\input{code}
+
+\end{document}  
