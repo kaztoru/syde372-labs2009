@@ -1,5 +1,8 @@
 \label{sec:2d}
 \subsection{Implementation}
+The non-parametric estimation was implemented first for the 2 case.  A 2D Gaussian matrix was created, using the specified variance of $\sigma^2=400$ over a range of x-values from -60 to 60.  Similar to the previous lab, class structure was used to streamline the code.  Each of the data clusters, al, bl, cl, were passed into the function TwoD, where the mean and covariance were estimated.  The provided parzen methods, included as part of the OneD class, was then called to estimate the PDF of each of the clusters, using the previously defined 2D Gaussian matrix and and resolution.  The returned parameters p, x, and y were assigned to ap, ax, and ay for Cluster A, bp, bx, and by for Cluster B and so on.  These estimated PDFs for each cluster (ap, bp, cp) were then passed into the ML function to form the classification boundaries.  The ML function steps through each sqare on the grid defined by the resolution, looking for the cluster with the highest probability each time.  A value of 0 is assigned to all elements of the grid ML for which Class A had a higher estimated probability, a value 1 for elements in which Class B was most likely, and a value 2 for elements in which Class C was most likely.  The ML boundaries were then plotted using a contour plot.  
+
+The parametric estimation was implemented to mimic the inputs and outputs of the parzen function in order to simplify the code.  The parametric methods of the TwoD class was then called to estimate the PDF of the cluster.  It used the previously defined resolution as well as the estimated mean and covariance parameters from earlier.  a matrix, p, of probability densities was the result, along with x and y bounds matching the parzen method.  These values, p, x, and y were then passed into the ML method, in the exact same manner as with the non-parametric case and the resulting ML boundaries were plotted using a contour plot.  
 
 \subsection{Results}
 For the two dimensional case, there are three clusters of data, all with
@@ -47,7 +50,7 @@ estimation.  The parameters required for the chosen model can always be
 estimated from the sample data.  However, they will not necessarily give a good
 approximation to the true classe shape.  Poor choice of the parametric model
 could lead to very poor classification boundaries.  This is evident in Figure
-\ref{X}, where the boundary associated with Class B is quite poor due to the
+\ref{fig:twod-par}, where the boundary associated with Class B is quite poor due to the
 fact that is not a Gaussian distributed class.
 
 In summary, it is better to use a parametric method of parameter estimation in
@@ -62,13 +65,13 @@ nonparametric will still perform well when the cluster data does fit a known
 model; the parametric approach will just be computationally faster.
 
 \begin{figure}
-\label{}
+\label{fig:twod-par}
 \includegraphics[scale=0.4]{twod-par}
-\caption{}
+\caption{2D Parametric Estimation}
 \end{figure}
 
 \begin{figure}
-\label{}
+\label{fig:twod-nonpar}
 \includegraphics[scale=0.4]{twod-nonpar}
-\caption{}
+\caption{2D Non-Parametric Estimation}
 \end{figure}
