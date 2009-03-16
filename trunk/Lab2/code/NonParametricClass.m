@@ -9,7 +9,11 @@ classdef NonParametricClass
     methods
         %% Initialization
         function NPC = NonParametricClass(mu, sigma, n_pts)
-           NPC.Cluster = mvnrnd(mu, sigma, n_pts);
+            if nargin == 1
+                NPC.Cluster = mu;
+            else
+                NPC.Cluster = mvnrnd(mu, sigma, n_pts);
+            end
         end
         
         %% Plotting
