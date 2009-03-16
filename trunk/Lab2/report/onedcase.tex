@@ -1,14 +1,17 @@
 \label{sec:1d}
 \subsection{Implementation}
-
+The 1-dimensional models are run from \texttt{lab2p1.m} in Section
+\ref{sec:lab2p1}. The models themselves are represented by the \texttt{OneD}
+class from the \texttt{OneD.m} file in Section \ref{sec:oned}.
 
 \subsection{Results}
 Each data set yielded varying results with the different approximation methods.
 The Gaussian samples, shown in Figures \ref{fig:gg}, \ref{fig:ge} and
 \ref{fig:gu}, the parametric estimation assuming the unknown density is
-Gaussian is closest to the original. For the Exponential samples in Figures
+Gaussian is closest to the original. For the exponential samples in Figures
 \ref{fig:eg}, \ref{fig:ee} and \ref{fig:eu}, the
-parametric estimation assuming theunknown density is Exponential is closest to the original.
+parametric estimation assuming theunknown density is exponential is closest to
+the original.
 
 The Parzen window method, depicted in Figures \ref{fig:parzen1} and \ref{fig:parzen4} does a
 better estimation than the parametric methods when the model assumption does
@@ -30,7 +33,6 @@ A parametric method is preferred if the sample data follows the assumed
 distribution closely and the parameters can be easily computed. In contrast, a
 non-parametric approach is preferable if the sample data do not follow any
 particular known distribution or the number of samples are very small.
-
 
 \begin{figure}
 \label{fig:gg}
