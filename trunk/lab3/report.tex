@@ -1,0 +1,52 @@
+\documentclass{sydeStyle}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{color}
+
+\lstset{language=Matlab}
+
+\numberwithin{algorithm}{chapter}
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+\title{Lab 3: Image Classification}
+\coursecode{372}
+\author{
+    David Kadish, 20176757\\
+    Zhao Peng, 20326604\\
+    Matt Stewart, 20205320\\
+}
+\prof{Professor P. Fieguth}
+\date{April 3, 2009}
+
+\begin{document}
+
+\pagenumbering{roman}
+
+\maketitle
+
+\setcounter{page}{2} % the table of contents will be shown as page iii
+
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+\input{chapters/intro}
+
+\chapter{Implementation and Results}
+
+
+\chapter{Conclusions}
+\input{chapters/conclusions}
+
+\appendix
+\renewcommand{\thechapter}{\Alph{chapter}}
+
+\chapter{Code}
+\input{chapters/code}
+
+\end{document}  
