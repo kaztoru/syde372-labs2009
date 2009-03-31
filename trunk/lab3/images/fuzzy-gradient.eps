@@ -1,0 +1,1959 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Creator: MATLAB, The Mathworks, Inc. Version 7.6.0.324 (R2008a). Operating System: Microsoft Windows Vista.
+%%Title: C:\Users\dkadish\Documents\matlab\prlab3\fuzzy-gradient.eps
+%%CreationDate: 03/31/2009  01:37:19
+%%DocumentNeededFonts: Helvetica
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%%LanguageLevel: 2
+%%Pages: 1
+%%BoundingBox:  -174   133   786   658
+%%EndComments
+
+%%BeginProlog
+% MathWorks dictionary
+/MathWorks 160 dict begin
+% definition operators
+/bdef {bind def} bind def
+/ldef {load def} bind def
+/xdef {exch def} bdef
+/xstore {exch store} bdef
+% operator abbreviations
+/c  /clip ldef
+/cc /concat ldef
+/cp /closepath ldef
+/gr /grestore ldef
+/gs /gsave ldef
+/mt /moveto ldef
+/np /newpath ldef
+/cm /currentmatrix ldef
+/sm /setmatrix ldef
+/rm /rmoveto ldef
+/rl /rlineto ldef
+/s {show newpath} bdef
+/sc {setcmykcolor} bdef
+/sr /setrgbcolor ldef
+/sg /setgray ldef
+/w /setlinewidth ldef
+/j /setlinejoin ldef
+/cap /setlinecap ldef
+/rc {rectclip} bdef
+/rf {rectfill} bdef
+% page state control
+/pgsv () def
+/bpage {/pgsv save def} bdef
+/epage {pgsv restore} bdef
+/bplot /gsave ldef
+/eplot {stroke grestore} bdef
+% orientation switch
+/portraitMode 0 def /landscapeMode 1 def /rotateMode 2 def
+% coordinate system mappings
+/dpi2point 0 def
+% font control
+/FontSize 0 def
+/FMS {/FontSize xstore findfont [FontSize 0 0 FontSize neg 0 0]
+  makefont setfont} bdef
+/ISOLatin1Encoding where {pop /WindowsLatin1Encoding 256 array bdef
+ISOLatin1Encoding WindowsLatin1Encoding copy pop
+/.notdef/.notdef/quotesinglbase/florin/quotedblbase/ellipsis/dagger
+/daggerdbl/circumflex/perthousand/Scaron/guilsinglleft/OE/.notdef/.notdef
+/.notdef/.notdef/quoteleft/quoteright/quotedblleft/quotedblright/bullet
+/endash/emdash/tilde/trademark/scaron/guilsinglright/oe/.notdef/.notdef
+/Ydieresis WindowsLatin1Encoding 128 32 getinterval astore pop}
+{/WindowsLatin1Encoding StandardEncoding bdef} ifelse
+/reencode {exch dup where {pop load} {pop StandardEncoding} ifelse
+  exch dup 3 1 roll findfont dup length dict begin
+  { 1 index /FID ne {def}{pop pop} ifelse } forall
+  /Encoding exch def currentdict end definefont pop} bdef
+/isroman {findfont /CharStrings get /Agrave known} bdef
+/FMSR {3 1 roll 1 index dup isroman {reencode} {pop pop} ifelse
+  exch FMS} bdef
+/csm {1 dpi2point div -1 dpi2point div scale neg translate
+ dup landscapeMode eq {pop -90 rotate}
+  {rotateMode eq {90 rotate} if} ifelse} bdef
+% line types: solid, dotted, dashed, dotdash
+/SO { [] 0 setdash } bdef
+/DO { [.5 dpi2point mul 4 dpi2point mul] 0 setdash } bdef
+/DA { [6 dpi2point mul] 0 setdash } bdef
+/DD { [.5 dpi2point mul 4 dpi2point mul 6 dpi2point mul 4
+  dpi2point mul] 0 setdash } bdef
+% macros for lines and objects
+/L {lineto stroke} bdef
+/MP {3 1 roll moveto 1 sub {rlineto} repeat} bdef
+/AP {{rlineto} repeat} bdef
+/PDlw -1 def
+/W {/PDlw currentlinewidth def setlinewidth} def
+/PP {closepath eofill} bdef
+/DP {closepath stroke} bdef
+/MR {4 -2 roll moveto dup  0 exch rlineto exch 0 rlineto
+  neg 0 exch rlineto closepath} bdef
+/FR {MR stroke} bdef
+/PR {MR fill} bdef
+/L1i {{currentfile picstr readhexstring pop} image} bdef
+/tMatrix matrix def
+/MakeOval {newpath tMatrix currentmatrix pop translate scale
+0 0 1 0 360 arc tMatrix setmatrix} bdef
+/FO {MakeOval stroke} bdef
+/PO {MakeOval fill} bdef
+/PD {currentlinewidth 2 div 0 360 arc fill
+   PDlw -1 eq not {PDlw w /PDlw -1 def} if} def
+/FA {newpath tMatrix currentmatrix pop translate scale
+  0 0 1 5 -2 roll arc tMatrix setmatrix stroke} bdef
+/PA {newpath tMatrix currentmatrix pop	translate 0 0 moveto scale
+  0 0 1 5 -2 roll arc closepath tMatrix setmatrix fill} bdef
+/FAn {newpath tMatrix currentmatrix pop translate scale
+  0 0 1 5 -2 roll arcn tMatrix setmatrix stroke} bdef
+/PAn {newpath tMatrix currentmatrix pop translate 0 0 moveto scale
+  0 0 1 5 -2 roll arcn closepath tMatrix setmatrix fill} bdef
+/vradius 0 def /hradius 0 def /lry 0 def
+/lrx 0 def /uly 0 def /ulx 0 def /rad 0 def
+/MRR {/vradius xdef /hradius xdef /lry xdef /lrx xdef /uly xdef
+  /ulx xdef newpath tMatrix currentmatrix pop ulx hradius add uly
+  vradius add translate hradius vradius scale 0 0 1 180 270 arc 
+  tMatrix setmatrix lrx hradius sub uly vradius add translate
+  hradius vradius scale 0 0 1 270 360 arc tMatrix setmatrix
+  lrx hradius sub lry vradius sub translate hradius vradius scale
+  0 0 1 0 90 arc tMatrix setmatrix ulx hradius add lry vradius sub
+  translate hradius vradius scale 0 0 1 90 180 arc tMatrix setmatrix
+  closepath} bdef
+/FRR {MRR stroke } bdef
+/PRR {MRR fill } bdef
+/MlrRR {/lry xdef /lrx xdef /uly xdef /ulx xdef /rad lry uly sub 2 div def
+  newpath tMatrix currentmatrix pop ulx rad add uly rad add translate
+  rad rad scale 0 0 1 90 270 arc tMatrix setmatrix lrx rad sub lry rad
+  sub translate rad rad scale 0 0 1 270 90 arc tMatrix setmatrix
+  closepath} bdef
+/FlrRR {MlrRR stroke } bdef
+/PlrRR {MlrRR fill } bdef
+/MtbRR {/lry xdef /lrx xdef /uly xdef /ulx xdef /rad lrx ulx sub 2 div def
+  newpath tMatrix currentmatrix pop ulx rad add uly rad add translate
+  rad rad scale 0 0 1 180 360 arc tMatrix setmatrix lrx rad sub lry rad
+  sub translate rad rad scale 0 0 1 0 180 arc tMatrix setmatrix
+  closepath} bdef
+/FtbRR {MtbRR stroke } bdef
+/PtbRR {MtbRR fill } bdef
+/stri 6 array def /dtri 6 array def
+/smat 6 array def /dmat 6 array def
+/tmat1 6 array def /tmat2 6 array def /dif 3 array def
+/asub {/ind2 exch def /ind1 exch def dup dup
+  ind1 get exch ind2 get sub exch } bdef
+/tri_to_matrix {
+  2 0 asub 3 1 asub 4 0 asub 5 1 asub
+  dup 0 get exch 1 get 7 -1 roll astore } bdef
+/compute_transform {
+  dmat dtri tri_to_matrix tmat1 invertmatrix 
+  smat stri tri_to_matrix tmat2 concatmatrix } bdef
+/ds {stri astore pop} bdef
+/dt {dtri astore pop} bdef
+/db {2 copy /cols xdef /rows xdef mul dup 3 mul string
+  currentfile 
+  3 index 0 eq {/ASCIIHexDecode filter}
+  {/ASCII85Decode filter 3 index 2 eq {/RunLengthDecode filter} if }
+  ifelse exch readstring pop
+  dup 0 3 index getinterval /rbmap xdef
+  dup 2 index dup getinterval /gbmap xdef
+  1 index dup 2 mul exch getinterval /bbmap xdef pop pop}bdef
+/it {gs np dtri aload pop moveto lineto lineto cp c
+  cols rows 8 compute_transform 
+  rbmap gbmap bbmap true 3 colorimage gr}bdef
+/il {newpath moveto lineto stroke}bdef
+currentdict end def
+%%EndProlog
+
+%%BeginSetup
+MathWorks begin
+
+0 cap
+
+end
+%%EndSetup
+
+%%Page: 1 1
+%%BeginPageSetup
+%%PageBoundingBox:  -174   133   786   658
+MathWorks begin
+bpage
+%%EndPageSetup
+
+%%BeginObject: obj1
+bplot
+
+/dpi2point 12 def
+portraitMode -2088 7896 csm
+
+    0     0 11520  6300 rc
+242 dict begin %Colortable dictionary
+/c0 { 0.000000 0.000000 0.000000 sr} bdef
+/c1 { 1.000000 1.000000 1.000000 sr} bdef
+/c2 { 0.900000 0.000000 0.000000 sr} bdef
+/c3 { 0.000000 0.820000 0.000000 sr} bdef
+/c4 { 0.000000 0.000000 0.800000 sr} bdef
+/c5 { 0.910000 0.820000 0.320000 sr} bdef
+/c6 { 1.000000 0.260000 0.820000 sr} bdef
+/c7 { 0.000000 0.820000 0.820000 sr} bdef
+c0
+1 j
+1 sg
+   0    0 11521 6301 rf
+6 w
+0 5134 8928 0 0 -5134 1498 5607 4 MP
+PP
+-8928 0 0 5134 8928 0 0 -5134 1498 5607 5 MP stroke
+4 w
+DO
+SO
+6 w
+0 sg
+1498 5607 mt 10426 5607 L
+1498 5607 mt 1498  473 L
+1498 5607 mt 1498 5517 L
+%%IncludeResource: font Helvetica
+/Helvetica /WindowsLatin1Encoding 120 FMSR
+
+1465 5752 mt 
+(0) s
+2773 5607 mt 2773 5517 L
+2657 5752 mt 
+(0.02) s
+4048 5607 mt 4048 5517 L
+3932 5752 mt 
+(0.04) s
+5324 5607 mt 5324 5517 L
+5208 5752 mt 
+(0.06) s
+6599 5607 mt 6599 5517 L
+6483 5752 mt 
+(0.08) s
+7875 5607 mt 7875 5517 L
+7792 5752 mt 
+(0.1) s
+9150 5607 mt 9150 5517 L
+9034 5752 mt 
+(0.12) s
+10426 5607 mt 10426 5517 L
+10310 5752 mt 
+(0.14) s
+1498 5607 mt 1587 5607 L
+1397 5651 mt 
+(0) s
+1498 5036 mt 1587 5036 L
+1230 5080 mt 
+(0.02) s
+1498 4466 mt 1587 4466 L
+1230 4510 mt 
+(0.04) s
+1498 3895 mt 1587 3895 L
+1230 3939 mt 
+(0.06) s
+1498 3325 mt 1587 3325 L
+1230 3369 mt 
+(0.08) s
+1498 2754 mt 1587 2754 L
+1297 2798 mt 
+(0.1) s
+1498 2184 mt 1587 2184 L
+1230 2228 mt 
+(0.12) s
+1498 1613 mt 1587 1613 L
+1230 1657 mt 
+(0.14) s
+1498 1043 mt 1587 1043 L
+1230 1087 mt 
+(0.16) s
+1498  473 mt 1587  473 L
+1230  517 mt 
+(0.18) s
+gs 1498 473 8929 5135 rc
+0 j
+gr
+
+0 j
+0 -30 -30 0 0 30 30 0 4184 3320 5 MP
+/c8 { 0.900067 0.560273 0.405451 sr} bdef
+c8
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4293 3367 5 MP
+/c9 { 0.915624 0.569931 0.405016 sr} bdef
+c9
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4359 3431 5 MP
+/c10 { 0.936025 0.583343 0.404612 sr} bdef
+c10
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4532 3558 5 MP
+/c11 { 0.932321 0.583486 0.406208 sr} bdef
+c11
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3757 3783 5 MP
+/c12 { 0.876192 0.578489 0.422435 sr} bdef
+c12
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4272 3458 5 MP
+/c13 { 0.957507 0.596852 0.403644 sr} bdef
+c13
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4726 3407 5 MP
+/c14 { 0.854971 0.524743 0.405012 sr} bdef
+c14
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3871 3717 5 MP
+/c15 { 0.944636 0.599511 0.409215 sr} bdef
+c15
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4077 3684 5 MP
+/c16 { 0.982853 0.613065 0.402591 sr} bdef
+c16
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3978 3483 5 MP
+/c17 { 0.971679 0.606141 0.403157 sr} bdef
+c17
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3526 3898 5 MP
+/c18 { 0.743098 0.546118 0.451938 sr} bdef
+c18
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3939 3821 5 MP
+/c19 { 0.865013 0.575353 0.424377 sr} bdef
+c19
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4001 3822 5 MP
+/c20 { 0.868991 0.576162 0.423394 sr} bdef
+c20
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3683 3970 5 MP
+/c21 { 0.683602 0.533493 0.464028 sr} bdef
+c21
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3579 3961 5 MP
+/c22 { 0.692271 0.535921 0.463112 sr} bdef
+c22
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3595 4076 5 MP
+/c23 { 0.605671 0.520522 0.482549 sr} bdef
+c23
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9484 1102 5 MP
+/c24 { 0.002947 0.988806 0.006180 sr} bdef
+c24
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8993 1161 5 MP
+/c25 { 0.021195 0.906423 0.046900 sr} bdef
+c25
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9120 1138 5 MP
+/c26 { 0.009796 0.958729 0.021293 sr} bdef
+c26
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9320 973 5 MP
+/c27 { 0.004756 0.982619 0.009191 sr} bdef
+c27
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9111 1085 5 MP
+/c28 { 0.007138 0.970940 0.014869 sr} bdef
+c28
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9298 1412 5 MP
+/c29 { 0.061588 0.699498 0.174813 sr} bdef
+c29
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9320 1040 5 MP
+/c30 { 0.000473 0.998204 0.000955 sr} bdef
+c30
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9127 1054 5 MP
+/c31 { 0.005945 0.976377 0.012098 sr} bdef
+c31
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9511 1175 5 MP
+/c32 { 0.010201 0.959932 0.022516 sr} bdef
+c32
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9409 1020 5 MP
+/c33 { 0.001592 0.994129 0.003166 sr} bdef
+c33
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9193 1084 5 MP
+/c34 { 0.003187 0.987253 0.006639 sr} bdef
+c34
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9470 901 5 MP
+/c35 { 0.014714 0.949452 0.027289 sr} bdef
+c35
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8974 1056 5 MP
+/c36 { 0.016527 0.932275 0.033493 sr} bdef
+c36
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9304 710 5 MP
+/c37 { 0.049398 0.841677 0.083253 sr} bdef
+c37
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9725 707 5 MP
+/c38 { 0.055819 0.829409 0.094706 sr} bdef
+c38
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9770 922 5 MP
+/c39 { 0.025319 0.916308 0.047235 sr} bdef
+c39
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7901 2439 5 MP
+/c40 { 0.286181 0.112571 0.556000 sr} bdef
+c40
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8730 2130 5 MP
+/c41 { 0.027720 0.026722 0.925167 sr} bdef
+c41
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9189 2101 5 MP
+/c42 { 0.097000 0.123208 0.745473 sr} bdef
+c42
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8474 2023 5 MP
+/c43 { 0.006878 0.006418 0.975323 sr} bdef
+c43
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8111 2347 5 MP
+/c44 { 0.158126 0.079587 0.705326 sr} bdef
+c44
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8787 1943 5 MP
+/c45 { 0.048134 0.063484 0.823372 sr} bdef
+c45
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8449 2316 5 MP
+/c46 { 0.087882 0.060233 0.823026 sr} bdef
+c46
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 10262 1748 5 MP
+/c47 { 0.153820 0.432403 0.405927 sr} bdef
+c47
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8537 2034 5 MP
+/c48 { 0.007375 0.007082 0.974847 sr} bdef
+c48
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9075 2233 5 MP
+/c49 { 0.103769 0.109695 0.771696 sr} bdef
+c49
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9017 1656 5 MP
+/c50 { 0.097122 0.307963 0.449973 sr} bdef
+c50
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9856 1255 5 MP
+/c51 { 0.042930 0.839800 0.096396 sr} bdef
+c51
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8463 2199 5 MP
+/c52 { 0.023683 0.017734 0.941258 sr} bdef
+c52
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8956 1775 5 MP
+/c53 { 0.089219 0.190626 0.589773 sr} bdef
+c53
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9120 1801 5 MP
+/c54 { 0.097025 0.211404 0.586255 sr} bdef
+c54
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 10342 1667 5 MP
+/c55 { 0.146733 0.477990 0.365897 sr} bdef
+c55
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6264 2452 5 MP
+/c56 { 0.971430 0.009951 0.018168 sr} bdef
+c56
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6527 2315 5 MP
+/c57 { 0.925166 0.018964 0.040318 sr} bdef
+c57
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6326 2539 5 MP
+/c58 { 0.965471 0.012978 0.023552 sr} bdef
+c58
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6121 2581 5 MP
+/c59 { 0.903765 0.041510 0.069226 sr} bdef
+c59
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6830 2265 5 MP
+/c60 { 0.757685 0.047111 0.120624 sr} bdef
+c60
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6089 2299 5 MP
+/c61 { 0.858755 0.044981 0.079840 sr} bdef
+c61
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6422 2348 5 MP
+/c62 { 0.956863 0.012130 0.024348 sr} bdef
+c62
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6643 2152 5 MP
+/c63 { 0.662292 0.061277 0.142509 sr} bdef
+c63
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6638 2666 5 MP
+/c64 { 0.871013 0.050037 0.096275 sr} bdef
+c64
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6122 2690 5 MP
+/c65 { 0.845048 0.075054 0.120932 sr} bdef
+c65
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6391 2248 5 MP
+/c66 { 0.851942 0.037034 0.074939 sr} bdef
+c66
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6149 2479 5 MP
+/c67 { 0.940031 0.022750 0.039536 sr} bdef
+c67
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6273 2516 5 MP
+/c68 { 0.964371 0.013339 0.023937 sr} bdef
+c68
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6291 2278 5 MP
+/c69 { 0.879926 0.033194 0.063995 sr} bdef
+c69
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6267 2643 5 MP
+/c70 { 0.895833 0.045243 0.077577 sr} bdef
+c70
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6103 2705 5 MP
+/c71 { 0.833551 0.082490 0.131501 sr} bdef
+c71
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7078 4095 5 MP
+/c72 { 0.515998 0.028322 0.067116 sr} bdef
+c72
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7208 4013 5 MP
+/c73 { 0.502088 0.003051 0.008253 sr} bdef
+c73
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7911 3976 5 MP
+/c74 { 0.685314 0.078481 0.504854 sr} bdef
+c74
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8666 3715 5 MP
+/c75 { 0.830960 0.143050 0.944482 sr} bdef
+c75
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6867 4048 5 MP
+/c76 { 0.526006 0.053931 0.112402 sr} bdef
+c76
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7534 3952 5 MP
+/c77 { 0.525962 0.022925 0.087306 sr} bdef
+c77
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8136 3960 5 MP
+/c78 { 0.826641 0.071699 0.782131 sr} bdef
+c78
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7496 4010 5 MP
+/c79 { 0.514615 0.014408 0.050866 sr} bdef
+c79
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9173 4010 5 MP
+/c80 { 0.628763 0.301351 0.844506 sr} bdef
+c80
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6687 4027 5 MP
+/c81 { 0.539740 0.092516 0.172792 sr} bdef
+c81
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8318 4099 5 MP
+/c82 { 0.770519 0.111709 0.740962 sr} bdef
+c82
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8185 3779 5 MP
+/c83 { 0.900469 0.056315 0.906662 sr} bdef
+c83
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8936 4058 5 MP
+/c84 { 0.723216 0.206054 0.840970 sr} bdef
+c84
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7892 3916 5 MP
+/c85 { 0.699693 0.078613 0.535158 sr} bdef
+c85
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7481 3914 5 MP
+/c86 { 0.524247 0.023166 0.083872 sr} bdef
+c86
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7845 3928 5 MP
+/c87 { 0.664925 0.074719 0.457066 sr} bdef
+c87
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6654 2762 5 MP
+/c88 { 0.792338 0.089498 0.166179 sr} bdef
+c88
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7460 2333 5 MP
+/c89 { 0.419635 0.089285 0.368074 sr} bdef
+c89
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7463 2395 5 MP
+/c90 { 0.463588 0.095161 0.356820 sr} bdef
+c90
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7663 2374 5 MP
+/c91 { 0.341221 0.098516 0.466514 sr} bdef
+c91
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6925 2601 5 MP
+/c92 { 0.822305 0.057464 0.126888 sr} bdef
+c92
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7318 2401 5 MP
+/c93 { 0.559135 0.085395 0.282012 sr} bdef
+c93
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7513 2401 5 MP
+/c94 { 0.438266 0.098283 0.381345 sr} bdef
+c94
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8026 2042 5 MP
+/c95 { 0.058796 0.036758 0.748928 sr} bdef
+c95
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7178 2552 5 MP
+/c96 { 0.697525 0.083216 0.212586 sr} bdef
+c96
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7781 2017 5 MP
+/c97 { 0.100375 0.051656 0.457639 sr} bdef
+c97
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7663 2114 5 MP
+/c98 { 0.166987 0.064165 0.464334 sr} bdef
+c98
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8413 1736 5 MP
+/c99 { 0.075864 0.119649 0.505333 sr} bdef
+c99
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6996 2250 5 MP
+/c100 { 0.635148 0.062014 0.179702 sr} bdef
+c100
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7872 1938 5 MP
+/c101 { 0.072324 0.046759 0.411900 sr} bdef
+c101
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8133 1840 5 MP
+/c102 { 0.062156 0.061167 0.497103 sr} bdef
+c102
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7973 2193 5 MP
+/c103 { 0.104912 0.051106 0.731259 sr} bdef
+c103
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7495 1569 5 MP
+/c104 { 0.039801 0.039128 0.073979 sr} bdef
+c104
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7511 1464 5 MP
+/c105 { 0.074887 0.091364 0.132825 sr} bdef
+c105
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7955 1682 5 MP
+/c106 { 0.050592 0.059576 0.181801 sr} bdef
+c106
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7867 1589 5 MP
+/c107 { 0.053597 0.071157 0.147028 sr} bdef
+c107
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6905 2197 5 MP
+/c108 { 0.612867 0.062731 0.172474 sr} bdef
+c108
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7380 1878 5 MP
+/c109 { 0.047901 0.022221 0.080253 sr} bdef
+c109
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8001 1697 5 MP
+/c110 { 0.055070 0.065427 0.217171 sr} bdef
+c110
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8192 1769 5 MP
+/c111 { 0.067236 0.080993 0.428124 sr} bdef
+c111
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6813 1811 5 MP
+/c112 { 0.185394 0.066537 0.147034 sr} bdef
+c112
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7015 1953 5 MP
+/c113 { 0.214161 0.059740 0.169531 sr} bdef
+c113
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6850 1515 5 MP
+/c114 { 0.142746 0.098015 0.154775 sr} bdef
+c114
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 6957 1799 5 MP
+/c115 { 0.124065 0.049933 0.117469 sr} bdef
+c115
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7141 1717 5 MP
+/c116 { 0.048988 0.027015 0.062278 sr} bdef
+c116
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7232 1892 5 MP
+/c117 { 0.085324 0.033668 0.107808 sr} bdef
+c117
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7371 1693 5 MP
+/c118 { 0.010352 0.007134 0.017557 sr} bdef
+c118
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 7548 1591 5 MP
+/c119 { 0.032255 0.031735 0.064139 sr} bdef
+c119
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4366 4256 5 MP
+/c120 { 0.515571 0.500335 0.496840 sr} bdef
+c120
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4700 4191 5 MP
+/c121 { 0.569658 0.491972 0.480562 sr} bdef
+c121
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4345 4421 5 MP
+/c122 { 0.522908 0.501121 0.497306 sr} bdef
+c122
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4954 4137 5 MP
+/c123 { 0.608743 0.472085 0.462015 sr} bdef
+c123
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3881 4334 5 MP
+/c124 { 0.511596 0.502754 0.499294 sr} bdef
+c124
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3940 4398 5 MP
+/c125 { 0.515344 0.504115 0.499777 sr} bdef
+c125
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4580 4092 5 MP
+/c126 { 0.595105 0.499893 0.475661 sr} bdef
+c126
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4878 4119 5 MP
+/c127 { 0.609838 0.479850 0.464559 sr} bdef
+c127
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4174 4436 5 MP
+/c128 { 0.518685 0.503060 0.499029 sr} bdef
+c128
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3956 4335 5 MP
+/c129 { 0.507311 0.501496 0.499419 sr} bdef
+c129
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4688 4293 5 MP
+/c130 { 0.550786 0.492087 0.486550 sr} bdef
+c130
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3902 4222 5 MP
+/c131 { 0.511887 0.502015 0.498304 sr} bdef
+c131
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3337 4497 5 MP
+/c132 { 0.554135 0.559133 0.529667 sr} bdef
+c132
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3894 4261 5 MP
+/c133 { 0.508917 0.501662 0.498938 sr} bdef
+c133
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4122 4389 5 MP
+/c134 { 0.510937 0.501754 0.499144 sr} bdef
+c134
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4068 4096 5 MP
+/c135 { 0.552009 0.506816 0.489533 sr} bdef
+c135
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9612 3353 5 MP
+/c136 { 0.103863 0.860939 0.941458 sr} bdef
+c136
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9298 3356 5 MP
+/c137 { 0.073501 0.904946 0.963160 sr} bdef
+c137
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9370 3575 5 MP
+/c138 { 0.033278 0.960690 0.988397 sr} bdef
+c138
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8770 3602 5 MP
+/c139 { 0.484289 0.473926 0.913903 sr} bdef
+c139
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9465 3538 5 MP
+/c140 { 0.028556 0.965373 0.988626 sr} bdef
+c140
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8842 3387 5 MP
+/c141 { 0.230171 0.718342 0.904829 sr} bdef
+c141
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8609 3585 5 MP
+/c142 { 0.598136 0.350330 0.892684 sr} bdef
+c142
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9634 3537 5 MP
+/c143 { 0.077326 0.904041 0.965556 sr} bdef
+c143
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9603 3382 5 MP
+/c144 { 0.087742 0.884353 0.952677 sr} bdef
+c144
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8504 3441 5 MP
+/c145 { 0.465373 0.451236 0.832845 sr} bdef
+c145
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9375 3661 5 MP
+/c146 { 0.138344 0.840401 0.957597 sr} bdef
+c146
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9301 3516 5 MP
+/c147 { 0.001172 0.998598 0.999568 sr} bdef
+c147
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9190 3529 5 MP
+/c148 { 0.021069 0.975290 0.993029 sr} bdef
+c148
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8337 3393 5 MP
+/c149 { 0.497150 0.391858 0.775970 sr} bdef
+c149
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 9254 3927 5 MP
+/c150 { 0.558585 0.380018 0.866185 sr} bdef
+c150
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 8569 3785 5 MP
+/c151 { 0.969207 0.023748 0.984746 sr} bdef
+c151
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 1745 3381 5 MP
+/c152 { 0.660118 0.504056 0.464091 sr} bdef
+c152
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 2009 5163 5 MP
+/c153 { 0.491472 0.991404 0.824411 sr} bdef
+c153
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 1881 5072 5 MP
+/c154 { 0.494365 0.975356 0.813867 sr} bdef
+c154
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3462 4257 5 MP
+/c155 { 0.558486 0.519839 0.498683 sr} bdef
+c155
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 4531 4313 5 MP
+/c156 { 0.531737 0.497856 0.493015 sr} bdef
+c156
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 1851 5301 5 MP
+/c157 { 0.496134 0.962461 0.805845 sr} bdef
+c157
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 1873 5363 5 MP
+/c158 { 0.497852 0.950907 0.798553 sr} bdef
+c158
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 2013 5435 5 MP
+/c159 { 0.499505 0.939092 0.791202 sr} bdef
+c159
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 2794 4811 5 MP
+/c160 { 0.523467 0.813622 0.705207 sr} bdef
+c160
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 2842 4976 5 MP
+/c161 { 0.509351 0.887182 0.755607 sr} bdef
+c161
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 2712 5078 5 MP
+/c162 { 0.499105 0.946322 0.794907 sr} bdef
+c162
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 2435 5295 5 MP
+/c163 { 0.494300 0.973428 0.812925 sr} bdef
+c163
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 2017 4984 5 MP
+/c164 { 0.495791 0.968280 0.809079 sr} bdef
+c164
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 2561 4859 5 MP
+/c165 { 0.510604 0.887856 0.755183 sr} bdef
+c165
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 1918 5240 5 MP
+/c166 { 0.493685 0.977906 0.815721 sr} bdef
+c166
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 -30 -30 0 0 30 30 0 3428 4996 5 MP
+/c167 { 0.532459 0.729897 0.653205 sr} bdef
+c167
+gs
+PP
+gr
+DP
+gs 1498 473 8929 5135 rc
+gr
+
+0 sg
+  60   60 7510 1758 PO
+  60   60 7510 1758 FO
+gs 1498 473 8929 5135 rc
+gr
+
+/c168 { 1.000000 0.000000 0.000000 sr} bdef
+c168
+  60   60 6497 2469 PO
+0 sg
+  60   60 6497 2469 FO
+gs 1498 473 8929 5135 rc
+gr
+
+/c169 { 0.000000 1.000000 0.000000 sr} bdef
+c169
+  60   60 9363 1080 PO
+0 sg
+  60   60 9363 1080 FO
+gs 1498 473 8929 5135 rc
+gr
+
+/c170 { 0.000000 0.000000 1.000000 sr} bdef
+c170
+  60   60 8453 2101 PO
+0 sg
+  60   60 8453 2101 FO
+gs 1498 473 8929 5135 rc
+gr
+
+/c171 { 1.000000 0.000000 1.000000 sr} bdef
+c171
+  60   60 8480 3846 PO
+0 sg
+  60   60 8480 3846 FO
+gs 1498 473 8929 5135 rc
+gr
+
+/c172 { 0.000000 1.000000 1.000000 sr} bdef
+c172
+  60   60 9320 3517 PO
+0 sg
+  60   60 9320 3517 FO
+gs 1498 473 8929 5135 rc
+gr
+
+0.5 sg
+  60   60 4112 4284 PO
+0 sg
+  60   60 4112 4284 FO
+gs 1498 473 8929 5135 rc
+gr
+
+/c173 { 0.500000 0.000000 0.000000 sr} bdef
+c173
+  60   60 7309 4009 PO
+0 sg
+  60   60 7309 4009 FO
+gs 1498 473 8929 5135 rc
+gr
+
+/c174 { 1.000000 0.620000 0.400000 sr} bdef
+c174
+  60   60 4120 3615 PO
+0 sg
+  60   60 4120 3615 FO
+gs 1498 473 8929 5135 rc
+gr
+
+/c175 { 0.490000 1.000000 0.830000 sr} bdef
+c175
+  60   60 2246 5158 PO
+0 sg
+  60   60 2246 5158 FO
+gs 1498 473 8929 5135 rc
+gr
+
+
+end %%Color Dict
+
+eplot
+%%EndObject
+
+epage
+end
+
+showpage
+
+%%Trailer
+%%EOF
