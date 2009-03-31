@@ -1,13 +1,13 @@
 #TeXlipse project settings
-#Sun Mar 15 22:59:36 EDT 2009
+#Mon Mar 30 10:57:43 EDT 2009
 builderNum=0
-outputDir=Lab2/report/
+outputDir=lab3/
 makeIndSty=
 bibrefDir=
 outputFormat=dvi
-tempDir=Lab2/report
+tempDir=lab3
 mainTexFile=report.tex
 outputFile=report.dvi
 langSpell=
 markDer=true
-srcDir=Lab2/report/
+srcDir=lab3/
