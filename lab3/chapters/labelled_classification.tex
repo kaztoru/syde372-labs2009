@@ -10,7 +10,7 @@ The MCID classifier was developed for each of the feature matrices for $n=2$, $n
 %\cmidrule(r){2-3} \cmidrule(r){4-5}
  & $M_{confusion}$ & $P(\varepsilon|i)$ & $P(\varepsilon)$ \\
 \midrule
-2 Features &
+$2x2$ Feature Blocks &
 \begin{bmatrix}
      1 &    0 &    0 &    2 &    3 &    0 &    1 &    4 &    5 &    0 &
      0 &    7 &    4 &    0 &    2 &    1 &    2 &    0 &    0 &    0 &
@@ -37,7 +37,7 @@ The MCID classifier was developed for each of the feature matrices for $n=2$, $n
 \end{bmatrix}
 &  0.7438 & 
 \\\addlinespace
-8 Features &
+$8x8$ Feature Blocks &
 \begin{bmatrix}
      9 &    0 &    0 &    3 &    0 &    0 &    0 &    4 &    0 &    0 &
      0 &   10 &    2 &    0 &    0 &    1 &    3 &    0 &    0 &    0 &
@@ -63,7 +63,7 @@ The MCID classifier was developed for each of the feature matrices for $n=2$, $n
    0.1875\\
 \end{bmatrix}
 &  0.4875 \\\addlinespace
-32 Features &
+$32x32$ Feature Blocks &
 \begin{bmatrix}
 	12 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    4 &
      0 &   16 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &
@@ -93,7 +93,7 @@ The MCID classifier was developed for each of the feature matrices for $n=2$, $n
 \end{tabular}
 \end{table}
 
-As we can see from the table on page \pageref{tab:conf}, the probability of a misclassification drastically increases as we choose fewer features.  With many features included, the resulting classifier performance is perfectly acceptable and quite comparable with results obtained in previous labs.  However, as we reduce the feature space down to only 2 features, the resulting classifier performance is abysmal.
-First, consider the data set based on 32 features.  The classifier performs quite well on this data set.  The confusion matrix shows relatively few misclassifications, The large majority of the classifications appearing on the diagonal of the confusion matrix, signifying a majority of correct classifications.  This observation is perhaps best summarized by considering the associated probability of error.  With 32 features forming the data set, the overall probability of having a classification error is about $14%$.  This is in the same approximate range as the data sets classified using MCID in previous labs, which is reassuring.  For even more resolution on the performance of the MCID classifier on this test data set, the probability of error for each individual image can be considered.  There are a couple of instances, 
-
-The performance of the MCID classifier using only two features is especially terrible.  In the specific example of the image of grass, the classifier does not manage to correctly classify even one data point.  Over all ten images, gets the clasification wrong $74.4%$ of the time.  Clearly this classifier will not be of great use due to its staggering lack of reliability.  We actually actually expect the classification it makes to be wrong more often than not.  At the other end of the spectrum, the MCID classification applied to the 32 feature data set does a much better job.  The clusters are much more separated in this case and this greatly improves MCID's ability to classify correctly.  The fundamental reason behind this is the location of the cluster means.  When the clusters are widespread and heavily operlap, as with the two feature case, the means do not serve as a very good prototype for a particular class
+As we can see from the table on page \pageref{tab:conf}, the probability of a misclassification drastically increases as we decrease our block size.  With many features included, the resulting classifier performance is perfectly acceptable and quite comparable with results obtained in previous labs.  However, as we reduce the block size down to only 2x2, the resulting classifier performance is abysmal.
+First, consider the data set based on 32x32 feature blocks.  The classifier performs quite well on this data set.  The confusion matrix shows relatively few misclassifications, The large majority of the classifications appearing on the diagonal of the confusion matrix, signifying a majority of correct classifications.  This observation is perhaps best summarized by considering the associated probability of error.  The overall probability of having a classification error is about $14%$ with this feature matrix.  This is in the same approximate range as the data sets classified using MCID in previous labs, which is reassuring.  For even more resolution on the performance of the MCID classifier on this test data set, the probability of error for each individual image can be considered.  There are a couple of instances, cotton and pigskin, in which no misclassifications are made whatsoever.  There is one image that this classifier really struggles with, and that is cork, with roughly a $50%$ error rate.  Overall, we should be quite satisfied with the classifiers performance when 32x32 feature blocks are used.
+We will next jump to the case in which only 2x2 feature blocks are used to develop the MCID classifier.  This choice results in terrible classification performance.  Looking at the corresponding confusion matrix, we no longer see a heavy concentration along the diagonal.  Instead, the matrix is more evenly distributed, signifying much fewer correct classifications.  Over all ten images, the MCID classifier gets the clasification wrong $74.4%$ of the time using 2x2 feature blocks.  This means that we should actually actually expect the classification to be wrong more often than its correct.  Clearly this classifier will not be of great use due to its staggering lack of reliability.  In the specific example of the image of grass, the classifier does not manage to correctly classify even one data point.  Overall, we should be very dissatisfied with the performance of the classifier in this case.  
+The 8 feature case provides a middle ground between the poor performance of the 2x2 feature blocks and the 32x32 feature blocks.  As shown in Table \ref{tab:conf}, the 8x8 probability of misclassification is an improvement on the 2x2 case, but far from being as good as the 32x32 case.  The 8x8 feature blocks might be used in an instance which there was some cost associated with feature block size, making the 32x32 blocks too expensive to use.  In this type of situation, the 8x8 blocks might provide an acceptable compromise between cost and performance.  
