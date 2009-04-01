@@ -1,0 +1,99 @@
+The MCID classifier was developed for each of the feature matrices for $n=2$, $n=8$, and $n=32$.  The provided feature matrices, \textbf{f2}, \textbf{f8}, and \textbf{f32} were used as learning data sets to teach the MCID classifiers the location and shape of the clusters.  This trained MCID classifier was then applied to the test data sets \textbf{f2t}, \textbf{f8t}, and \textbf{f32t}.  The performance of the classifier was assessed for each quantity of features using a confusion matrix.  The total probability of error is also shown for each case, shown in Figure \ref{tab:conf}.
+\begin{table}[h]
+\centering
+\caption{Summary of Error analysis for $n=2, 8, 32$ with confusion matrices $M_{confusion}$, the probability of error for each image $P(\varepsilon|i)$, and the total probabiliy of error $P(\varepsilon)$ for each feature matrix}
+\label{tab:conf}
+\vspace{6pt}
+\begin{tabular}{lcccc}
+\toprule
+ %& \multicolumn{1}{c}{Confusion Matrices and Probability of Error} \\
+%\cmidrule(r){2-3} \cmidrule(r){4-5}
+ & $M_{confusion}$ & $P(\varepsilon|i)$ & $P(\varepsilon)$ \\
+\midrule
+2 Features &
+\begin{bmatrix}
+     1 &    0 &    0 &    2 &    3 &    0 &    1 &    4 &    5 &    0 &
+     0 &    7 &    4 &    0 &    2 &    1 &    2 &    0 &    0 &    0 &
+     0 &    3 &    0 &    3 &    0 &    0 &    1 &    1 &    7 &    1 &
+     0 &    3 &    0 &    1 &    4 &    0 &    1 &    1 &    6 &    0 &
+     1 &    0 &    0 &    2 &    4 &    0 &    0 &    5 &    4 &    0 &
+     0 &    2 &    3 &    2 &    0 &    2 &    1 &    2 &    3 &    1 &
+     0 &    5 &    4 &    0 &    2 &    0 &    1 &    0 &    4 &    0 &
+     0 &    0 &    0 &    2 &    0 &    0 &    0 &    9 &    3 &    2 &
+     2 &    1 &    2 &    4 &    2 &    0 &    2 &    1 &    2 &    0 &
+     0 &    0 &    0 &    0 &    1 &    0 &    0 &    1 &    0 &   14 &
+\end{bmatrix} &
+\begin{bmatrix}
+   0.9375\\
+   0.5625\\
+   1.0000\\
+   0.9375\\
+   0.7500\\
+   0.8750\\
+   0.9375\\
+   0.4375\\
+   0.8750\\
+   0.1250\\
+\end{bmatrix}
+&  0.7438 & 
+\\\addlinespace
+8 Features &
+\begin{bmatrix}
+     9 &    0 &    0 &    3 &    0 &    0 &    0 &    4 &    0 &    0 &
+     0 &   10 &    2 &    0 &    0 &    1 &    3 &    0 &    0 &    0 &
+     0 &    1 &    4 &    2 &    0 &    4 &    3 &    0 &    2 &    0 &
+     1 &    0 &    0 &   12 &    0 &    1 &    1 &    0 &    1 &    0 &
+     0 &    0 &    0 &    1 &    5 &    0 &    0 &    1 &    9 &    0 &
+     0 &    0 &    4 &    3 &    0 &    2 &    4 &    0 &    3 &    0 &
+     0 &    0 &    0 &    2 &    0 &    8 &    6 &    0 &    0 &    0 &
+     0 &    0 &    0 &    0 &    2 &    0 &    0 &   10 &    0 &    4 &
+     0 &    0 &    1 &    1 &    3 &    0 &    0 &    0 &   11 &    0 &
+     0 &    0 &    0 &    0 &    1 &    0 &    0 &    0 &    2 &   13 &
+\end{bmatrix} &
+\begin{bmatrix}
+   0.4375\\
+   0.3750\\
+   0.7500\\
+   0.2500\\
+   0.6875\\
+   0.8750\\
+   0.6250\\
+   0.3750\\
+   0.3125\\
+   0.1875\\
+\end{bmatrix}
+&  0.4875 \\\addlinespace
+32 Features &
+\begin{bmatrix}
+	12 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    4 &
+     0 &   16 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &
+     0 &    1 &   15 &    0 &    0 &    0 &    0 &    0 &    0 &    0 &
+     0 &    0 &    0 &   16 &    0 &    0 &    0 &    0 &    0 &    0 &
+     0 &    0 &    0 &    0 &   15 &    0 &    0 &    0 &    1 &    0 &
+     0 &    0 &    6 &    1 &    0 &    7 &    2 &    0 &    0 &    0 &
+     0 &    0 &    0 &    0 &    0 &    1 &   15 &    0 &    0 &    0 &
+     0 &    0 &    0 &    0 &    0 &    0 &    0 &   11 &    0 &    5 &
+     0 &    0 &    0 &    0 &    1 &    0 &    0 &    0 &   15 &    0 &
+     0 &    0 &    0 &    0 &    0 &    0 &    0 &    1 &    0 &   15 &
+\end{bmatrix} &
+\begin{bmatrix}
+    0.2500\\
+    0.0000\\
+    0.0625\\
+    0.0000\\
+    0.0625\\
+    0.5625\\
+    0.0625\\
+    0.3125\\
+    0.0625\\
+    0.0625\\
+\end{bmatrix}
+& 0.1438 \\	\addlinespace
+\bottomrule
+\end{tabular}
+\end{table}
+
+As we can see from the table on page \pageref{tab:conf}, the probability of a misclassification drastically increases as we choose fewer features.  With many features included, the resulting classifier performance is perfectly acceptable and quite comparable with results obtained in previous labs.  However, as we reduce the feature space down to only 2 features, the resulting classifier performance is abysmal.
+First, consider the data set based on 32 features.  The classifier performs quite well on this data set.  The confusion matrix shows relatively few misclassifications, The large majority of the classifications appearing on the diagonal of the confusion matrix, signifying a majority of correct classifications.  This observation is perhaps best summarized by considering the associated probability of error.  With 32 features forming the data set, the overall probability of having a classification error is about $14%$.  This is in the same approximate range as the data sets classified using MCID in previous labs, which is reassuring.  For even more resolution on the performance of the MCID classifier on this test data set, the probability of error for each individual image can be considered.  There are a couple of instances, 
+
+The performance of the MCID classifier using only two features is especially terrible.  In the specific example of the image of grass, the classifier does not manage to correctly classify even one data point.  Over all ten images, gets the clasification wrong $74.4%$ of the time.  Clearly this classifier will not be of great use due to its staggering lack of reliability.  We actually actually expect the classification it makes to be wrong more often than not.  At the other end of the spectrum, the MCID classification applied to the 32 feature data set does a much better job.  The clusters are much more separated in this case and this greatly improves MCID's ability to classify correctly.  The fundamental reason behind this is the location of the cluster means.  When the clusters are widespread and heavily operlap, as with the two feature case, the means do not serve as a very good prototype for a particular class
