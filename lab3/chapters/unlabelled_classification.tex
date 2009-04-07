@@ -1,11 +1,17 @@
-The classification of unlabelled data is completed using the code presented in
-Section \ref{sec:q5}. MATLAB actually provides a number of built in functions
-for classifying data by k-means and fuzzy k-means
-which are used extensively in this implementation.
+\label{sec:unlabelled}
 
-MATLAB's \texttt{kmeans} and \texttt{fcm} functions are used to cluster the
-provided data. Much of the remainder of the code in Section \ref{sec:q5} is
-devoted to creating the plots in Figures \ref{fig:k-means-clear}, \ref{fig:k-means-multifuzz} and \ref{fig:k-means-gradientfuzz}.
+The classification of unlabelled data is completed using the code presented in
+Section \ref{sec:q5}. Both implementations are fairly self-explainitory.
+
+The data are clustered and plotted in Figures \ref{fig:k-means-clear},
+\ref{fig:k-means-multifuzz} and \ref{fig:k-means-gradientfuzz}. While the
+clusters using MCID are essentially the same every time, the clusters from
+k-means do not always end up in the same spot and often converge to other
+locations. 
+
+As for the multf8 matrix, K-means would likely perform well on that problem
+because the data are already clustered by class. Since K-means tries to keep
+the class sizes small, it would likely perform well.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{images/clear-coloured}
